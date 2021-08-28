@@ -1,0 +1,125 @@
+#cards {
+  /* flex box核心概念：軸－預設row */
+  display: flex;
+  flex-wrap: wrap;
+  width: 85%;
+  margin: 0 auto; /*上下 左右 - 置中 */
+}
+
+.card {
+  /* 卡片在容器內的排版 */
+  flex: 7% 1 1;
+  /* flex-basis(寬度), flex-grow, flex-shrink */
+  height: 8vw;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  margin: 2px;
+  /* 卡片內部元素的排版 */
+  display: flex;
+  flex-direction: column; /*main axis- column*/
+  justify-content: space-around;
+}
+
+.card img {
+  max-width: 30%;
+  align-self: center; /*用於排交叉軸(row)*/
+}
+
+.card p {
+  /* 瀏覽器有預設的margin，所以數字沒有在卡片裡面 */
+  margin: 3px;
+  font-size: 10px;
+}
+
+.card p:last-child {
+  transform: rotate(180deg);
+}
+
+.back {
+  background: url('https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png');
+  background-size: cover; 
+  /* 不重複 完整覆蓋 */
+}
+
+.paired {
+  background-color: #dae0e3;
+}
+
+#header {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 85%;
+}
+
+#header .title {
+  display: flex;
+  width: 100%;
+  /* main axis: row */
+  justify-content: flex-end;
+}
+
+#header .title img{
+  max-width: 3em;
+}
+
+#header .title h2 {
+  padding-left: 0.5em;
+}
+
+#header .score {
+  margin: 0;
+  color: 6c90ac;
+}
+
+#header .tried {
+  margin-top: 0;
+}
+
+@keyframes wrongAnimation {
+  to {
+    border: 2px solid #ffd54f;
+  }
+}
+
+.wrong {
+  animation-name: wrongAnimation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 5; 
+}
+
+
+/* GAME Finished */
+.completed {
+  background-color: RGBA(232, 246, 254, 0.8);
+  position: absolute;
+  top: 33vh;
+  z-index: 999;
+  width: 100vw; /*高度隨內容撐起*/
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.completed div {
+  margin: 0 30px;
+  
+}
+
+.completed i {
+  color: #00CED1;
+}
+
+.completed div >p {
+  font-size: 1.5em;
+  color: clack;
+  text-align: center;
+  margin: 0;
+}
+
+.completed div >p:first-child {
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
